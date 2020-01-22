@@ -12,18 +12,18 @@ import com.monsercode.skyllaconnect.R
 
 class AnnounceFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var announceViewModel: AnnounceViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        announceViewModel =
+            ViewModelProviders.of(this).get(AnnounceViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_announce, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(this, Observer {
+        announceViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root
